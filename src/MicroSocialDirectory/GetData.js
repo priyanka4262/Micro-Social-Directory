@@ -27,7 +27,6 @@ const GetData = () => {
   };
 
   const onSortHandler = () => {
-    console.log("in sort method");
     const data = [...displayUsers];
     let sortedUsers = [];
     if (sortIcon === "./sort-dsc.png") {
@@ -41,23 +40,19 @@ const GetData = () => {
       });
       setSortIcon("./sort-dsc.png");
     }
-
-    console.log(sortedUsers);
     setDisplayUsers(sortedUsers);
   };
 
   useEffect(() => {
-    console.log("test");
     axios
       .get("https://randomuser.me/api/?results=100")
       .then((response) => {
-        console.log(response.data.results);
         setUsers(response.data.results);
         setDisplayUsers(response.data.results.slice(0, usersPerPage));
       })
       .catch((error) => console.log(error));
   }, []);
-  console.log(displayUsers);
+
 
   return (
     <div>

@@ -1,7 +1,6 @@
 import axios from "axios";
 import react, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router";
-
 import { userContext } from "./GetData";
 import "./DisplayUserDetails.scss";
 const DisplayUserDetails = (props) => {
@@ -13,13 +12,14 @@ const DisplayUserDetails = (props) => {
     axios
       .get("https://randomuser.me/api/?phone={params.id}")
       .then((response) => {
-        console.log(response.data.results);
         setUserData(response.data.results[0]);
       });
   }, []);
+  
   const onClickListHandler = () => {
     history.push("/");
   };
+  
   return (
     <div class="d-flex align-items-center flex-column">
       <div className="card text-center" style={{ width: "29rem" }}>
@@ -28,8 +28,7 @@ const DisplayUserDetails = (props) => {
           <div className="text-center">
             <img className="userImg" src={userData.picture?.large}></img>
           </div>
-
-          <table className="table mt-4 ">
+           <table className="table mt-4 ">
             <tbody>
               <tr>
                 <td>Name</td>
