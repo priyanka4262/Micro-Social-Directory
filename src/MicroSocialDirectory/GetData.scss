@@ -1,0 +1,38 @@
+.mainTable {
+  margin: 0 auto !important;
+  width: 80% !important;
+  
+}
+.paginationBttns {
+  margin-top:40px;
+  width: 80%;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.paginationBttns a {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid #b8daff;
+  color: black;
+  cursor: pointer;
+}
+
+.paginationBttns a:hover {
+  color: white;
+  background-color: #b8daff;
+}
+
+.paginationActive a {
+  color: white;
+  background-color: #b8daff;
+}
+.ascendingImg {
+  height: 25px;
+}
+tr{
+cursor:pointer;
+}
